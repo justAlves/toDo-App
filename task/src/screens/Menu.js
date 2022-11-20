@@ -1,11 +1,31 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
-import { ScrollView, View, Text, StyleSheet, Platform } from 'react-native'
+import { View, Text, StyleSheet, Platform, TouchableOpacity } from 'react-native'
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer'
 import { Gravatar } from 'react-native-gravatar'
+import axios from 'axios'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import Icon from 'react-native-vector-icons/FontAwesome'
+
 import commonStyles from '../commonStyles'
+import { CommonActions } from '@react-navigation/native'
 
 export default props => {
+
+    const logout = () => {
+        delete axios.defaults.headers.common['Authorization']
+        AsyncStorage.removeItem('userData')
+        props.navigation.dispatch(
+            CommonActions.reset({
+                index: 0,
+                routes: [
+                    {
+                        name: 'Auth'
+                    }
+                ]
+            })
+        )
+    }
 
     return (
         <DrawerContentScrollView>
@@ -21,6 +41,11 @@ export default props => {
                         <Text style={styles.name}>{props.name}</Text>
                     </View>
                 </View>
+                <TouchableOpacity onPress={logout}>
+                    <View style={styles.logoutIcon}>
+                        <Icon name='sign-out' size={30} color='#800'/>
+                    </View>
+                </TouchableOpacity>
             </View>
             <DrawerItemList {...props}/>
         </DrawerContentScrollView>
@@ -63,5 +88,9 @@ const styles = StyleSheet.create({
     },
     info: {
         flexDirection: 'row'
+    },
+    logoutIcon: {
+        marginLeft: 20,
+        marginBottom: 10
     }
 })
