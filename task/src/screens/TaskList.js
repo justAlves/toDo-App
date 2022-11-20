@@ -9,10 +9,10 @@ import axios from 'axios';
 
 import { server, showError } from '../common';
 import commonStyles from '../commonStyles';
-import todayImage from '../../assets/imgs/today.jpg'
-import tomorrowImage from '../../assets/imgs/tomorrow.jpg'
-import weekImage from '../../assets/imgs/week.jpg'
-import monthImage from '../../assets/imgs/month.jpg'
+import todayImage from '../../assets/imgs/today.png'
+import tomorrowImage from '../../assets/imgs/tomorrow.png'
+import weekImage from '../../assets/imgs/week.png'
+import monthImage from '../../assets/imgs/month.png'
 import Task from '../components/Task';
 import AddTask from './AddTask';
 
@@ -211,3 +211,4 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     }
 })
+

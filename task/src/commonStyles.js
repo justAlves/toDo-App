@@ -2,9 +2,9 @@
 export default {
     fontFamily: 'Mohave',
     colors: {
-        today: '#B13B44',
-        tomorrow: '#C9742E',
-        week: '#15721E',
+        today: '#ff486f',
+        tomorrow: '#ffbf4e',
+        week: '#63ff72',
         month: '#1631BE',
         secundary: '#FFF',
         mainText: 'black',
