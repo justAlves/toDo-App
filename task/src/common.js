@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Alert, Platform } from "react-native";
 
-const server = Platform.OS === 'ios' ? 'http://localhost:3000' : 'http://192.168.1.112:3000'
+const server = 'https://saturnapp-backend.herokuapp.com'
 
 function showError(err){
     if(err.response && err.response.data){
