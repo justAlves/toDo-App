@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Alert, Platform } from "react-native";
 
-const server = 'https://saturnapp-backend.herokuapp.com'
+const server = 'https://saturnapp-backend.herokuapp.com/'
 
 function showError(err){
     if(err.response && err.response.data){
