@@ -8,6 +8,7 @@ import TaskList from './screens/TaskList'
 import Auth from './screens/Auth';
 import commonStyles from './commonStyles';
 import Menu from './screens/Menu';
+import AuthOrApp from './screens/AuthOrApp';
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -45,6 +46,7 @@ const DrawerNavigator = props => {
 const AuthNavigator = () => {
     return (
         <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Screen name='AuthOrApp' component={AuthOrApp}/>
             <Stack.Screen name="Auth" component={Auth}/>
             <Stack.Screen name="Home" component={DrawerNavigator}/>
         </Stack.Navigator>
